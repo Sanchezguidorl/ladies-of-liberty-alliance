@@ -1,0 +1,19 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+$light:#fff;
+$primary:#F6B31A;
+$secondary:#5f5f5f;
+$custom-colors:(
+    'secondaryDark':#404040
+);
+
+$theme-colors:(
+'primary':$primary,
+'secondary':$secondary,
+'light':$light
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors );
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';

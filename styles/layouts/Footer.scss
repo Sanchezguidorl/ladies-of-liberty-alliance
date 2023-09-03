@@ -1,0 +1,41 @@
+#Footer {
+    font-size: 13px;
+    color: #a3b1bf;
+     font-family: 'Lato', sans-serif;
+
+    h4 {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .inner-footer {
+        padding: 50px 30px;
+    }
+
+    .links-footer {
+        border-bottom: 1px solid #525252;
+
+        @media(min-width:576px) {
+            border-bottom: none;
+        }
+    }
+
+    .column-contact {
+        .constact-data-footer {
+            font-weight: 600;
+            max-width: 560px;
+            border-top: 1px solid #525252;
+
+            @media(min-width:576px) {
+                border-top: none;
+                border-left: 1px solid #525252;
+            }
+
+            .social-media-icons svg {
+                color: $primary;
+                height: 20px;
+                margin-right: 25%;
+            }
+        }
+    }
+}
