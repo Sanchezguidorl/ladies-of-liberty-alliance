@@ -1,51 +1,54 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import logo from "../assets/images/lola-logo.png";
+import { NavDropdown } from "react-bootstrap";
+import { useEffect, useState } from "react";
+
+
 function Header() {
+  const [headerSticky, setHeaderSticky]=useState(false);
+useEffect(()=>{
+const handleScroll=()=>{
+  if(window.scrollY>0){
+    setHeaderSticky(true);
+  }else{
+    setHeaderSticky(false)
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
+
+return ()=> {window.removeEventListener('scroll', handleScroll)};
+
+},[]);
+
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="#">
+    <Navbar expand="sm" style={{}} className={`bg-light header-nav ${headerSticky ? 'headerStickyStyle' : ''}`}>
+      <Container fluid className="container">
+        <Navbar.Brand className="navbar-logo" href="#">
+          <img src={logo} alt="Ladies of liberty alliance" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
+            className="my-2 my-lg-0"
+            style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
+  <NavDropdown title="SOBRE NOSOTRAS" id="basic-nav-dropdown" className="anchor-button text-white">
+    <NavDropdown.Item href="" className="p-1 px-3">link1</NavDropdown.Item>
+    <NavDropdown.Item href="" className="p-1 px-3">link1</NavDropdown.Item>
+  </NavDropdown>
+  <NavDropdown title="Donar" id="basic-nav-dropdown" className="anchor-button anchor-donate">
+    <NavDropdown.Item className=" p-1 px-3" href="">link1</NavDropdown.Item>
+    <NavDropdown.Item className="p-1 px-3" href="">link1</NavDropdown.Item>
+  </NavDropdown>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
+  );
 }
 
-export default Header
+export default Header;
