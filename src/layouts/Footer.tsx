@@ -78,7 +78,7 @@ function Footer() {
         </Row>
         </Container>
         <a
-          href=""
+          href="#main"
           className="arrow-up-anchor d-flex justify-content-center align-items-center"
         >
           <FontAwesomeIcon icon={faChevronUp} style={{ color: "#ffffff" }} />

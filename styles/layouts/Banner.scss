@@ -1,0 +1,28 @@
+.banner-container {
+    max-height: 300px;
+    overflow: hidden;
+    min-height: 265px;
+    background-image: url('../../src/assets/images/banner.jpg');
+    background-size: cover;
+    background-position: center center;
+    font-family: 'Roboto Condensed',sans-serif;
+    h2{
+        font-weight: 300;
+        font-size: 39px !important;
+        strong{
+            font-weight: 700;
+        }
+    }
+    text-shadow: 1px 2px 1px rgba(0,0,0,0.7);
+    .text-banner {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        img{
+            min-width: 400px;
+            max-width: 565px;
+        }
+    }
+}

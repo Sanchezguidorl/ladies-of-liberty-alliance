@@ -1,6 +1,3 @@
-@import '@fontsource/roboto-condensed/300.css';
-@import '@fontsource/roboto-condensed/400.css';
-@import '@fontsource/roboto-condensed/700.css';
 
 .header-nav {
     padding: 35px 0;
@@ -10,12 +7,12 @@
     font-family: 'Roboto Condensed', sans-serif;
     color: #646363;
 
-    .anchor-button>a {
+    .anchor-button>a, .nav-link {
         padding: 10px 13px !important;
         line-height: 20px;
     }
 
-    .anchor-button>a:hover {
+    .anchor-button>a:hover, .nav-link:hover {
         color: $primary;
     }
 

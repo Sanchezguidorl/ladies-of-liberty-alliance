@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../assets/images/lola-logo.png";
 import { NavDropdown } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -24,7 +25,7 @@ return ()=> {window.removeEventListener('scroll', handleScroll)};
 },[]);
 
   return (
-    <Navbar expand="sm" style={{}} className={`bg-light header-nav ${headerSticky ? 'headerStickyStyle' : ''}`}>
+    <Navbar id="Header" expand="sm" style={{}} className={`bg-light header-nav ${headerSticky ? 'headerStickyStyle' : ''}`}>
       <Container fluid className="container">
         <Navbar.Brand className="navbar-logo" href="#">
           <img src={logo} alt="Ladies of liberty alliance" />
@@ -36,10 +37,17 @@ return ()=> {window.removeEventListener('scroll', handleScroll)};
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-  <NavDropdown title="SOBRE NOSOTRAS" id="basic-nav-dropdown" className="anchor-button text-white">
+  <NavDropdown title="ACTIVIDADES" id="basic-nav-dropdown" className="anchor-button text-white">
     <NavDropdown.Item href="" className="p-1 px-3">link1</NavDropdown.Item>
     <NavDropdown.Item href="" className="p-1 px-3">link1</NavDropdown.Item>
   </NavDropdown>
+  <NavDropdown title="SOBRE NOSOTRAS" id="basic-nav-dropdown" className="anchor-button text-white">
+    <Link to={'about-us'} className="p-1 px-3 dropdown-item">link1</Link>
+    <NavDropdown.Item href="" className="p-1 px-3">link1</NavDropdown.Item>
+  </NavDropdown>
+<Nav.Link href="#Footer" className="anchor-button">
+  CONTÁCTANOS
+</Nav.Link>
   <NavDropdown title="Donar" id="basic-nav-dropdown" className="anchor-button anchor-donate">
     <NavDropdown.Item className=" p-1 px-3" href="">link1</NavDropdown.Item>
     <NavDropdown.Item className="p-1 px-3" href="">link1</NavDropdown.Item>
