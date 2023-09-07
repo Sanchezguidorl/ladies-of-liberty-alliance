@@ -62,6 +62,7 @@
     }
 
     .arrow-up-anchor {
+        z-index: 1100;
         position: absolute;
         background-color: $primary;
         height: 75px;

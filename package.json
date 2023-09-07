@@ -1,6 +1,10 @@
 {
   "name": "lola",
   "private": true,
+  "author":{
+    "name": "Guido Abel Sanchez",
+    "email": "sanchezguidorl@gmail.com"
+  },
   "version": "0.0.0",
   "type": "module",
   "scripts": {
